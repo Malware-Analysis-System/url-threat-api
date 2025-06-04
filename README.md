@@ -19,8 +19,11 @@ This is a lightweight FastAPI application designed to predict the threat level o
 ## 📁 File Structure
 
 ├── app.py # Main FastAPI backend
+
 ├── requirements.txt # Python dependencies
+
 ├── model1.pkl # First trained model
+
 ├── model2.pkl # Second trained model
 
 
