@@ -1,3 +1,28 @@
+import os
+import gdown
+
+# Google Drive file IDs
+PHISHING_MODEL_ID = "1QqySKm5-D0LlcO6n0VguyNz0LaKr3dts"
+MALWARE_MODEL_ID = "1JLXHm8Z_-Rw8ONITaMhViSCvdhhzWRaV"
+
+PHISHING_MODEL_PATH = "phishing_stack.pkl"
+MALWARE_MODEL_PATH = "new_malware_stack.pkl"
+
+def download_model(file_id, output_path):
+    if not os.path.exists(output_path):
+        print(f"Downloading {output_path} from Google Drive...")
+        url = f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(url, output_path, quiet=False)
+    else:
+        print(f"{output_path} already exists. Skipping download.")
+
+download_model(PHISHING_MODEL_ID, PHISHING_MODEL_PATH)
+download_model(MALWARE_MODEL_ID, MALWARE_MODEL_PATH)
+
+# ---------------------------------------
+# Rest of your original app.py code starts here
+# ---------------------------------------
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
