@@ -148,9 +148,4 @@ await rmClient.setIamPolicy({
 
 ---
 
-## 6. Best Practices
 
-- **Error Handling**: Always use `try/catch` and log errors via the project's `logger`.
-- **Resource Naming**: Ensure instance names are DNS-compliant (lowercase, numbers, hyphens).
-- **Polling**: Use a fallback timeout when polling operations to prevent infinite loops.
-- **Service Accounts**: Project-wide roles should be granted sparingly; prefer the principle of least privilege.
